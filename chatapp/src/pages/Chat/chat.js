@@ -6,6 +6,7 @@ let socket;
 
 const Chat = () => {
     const backEndUrl = "https://chattingapp2022.herokuapp.com/"
+    
 
     
     const [user,setUser]=useState("");
