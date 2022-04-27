@@ -64,8 +64,9 @@ io.on('connection',(socket)=>{
 
 if (process.env.NODE_ENV === 'production'){
 
-    app.use(express.static('chatapp/build'));
+    app.use(express.static('chatapp\build'));
 }
+
 
 
 //We make the http server listen on port 8000.
