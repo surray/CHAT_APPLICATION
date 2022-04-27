@@ -64,7 +64,7 @@ io.on('connection',(socket)=>{
 
 if (process.env.NODE_ENV === 'production'){
 
-    server.use(express.static('chatapp/build'));
+    app.use(express.static('chatapp/build'));
 }
 
 
