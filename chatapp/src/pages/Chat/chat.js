@@ -5,9 +5,9 @@ import './chat.css'
 let socket;
 
 const Chat = () => {
-    const backEndUrl = "http://localhost:8000/"
+    const backEndUrl = "https://chattingapp2022.herokuapp.com/"
 
-    //https://chattingapp2022.herokuapp.com/
+    
     const [user,setUser]=useState("");
     const [room, setRoom]=useState("");
     const [activeUser, setActiveUser]=useState([]);
