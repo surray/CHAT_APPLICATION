@@ -65,7 +65,7 @@ const Chat = () => {
     setTimeout(() => {
 
         var div = document.getElementById("chat_body");
-        div.scrollTop = div.scrollHeight - div.clientWidth;
+        div.scrollTop = div.scrollHeight;
     }, 100)
           
 
