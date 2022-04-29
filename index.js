@@ -15,9 +15,9 @@ const io=socketio(server,{
   });
 
 //We define a route handler / that gets called when we hit our website home.
-app.get('/',(req,res)=>
-    res.json('I am not giving up!')
-);
+// app.get('/',(req,res)=>
+//     res.json('I am not giving up!')
+// );
 
 io.on('connection',(socket)=>{
     console.log('User connected');
@@ -64,7 +64,7 @@ io.on('connection',(socket)=>{
 
 if (process.env.NODE_ENV === 'production'){
 
-    app.use(express.static('chatapp\build'));
+    app.use(express.static('chatapp/build'));
 }
 
 
