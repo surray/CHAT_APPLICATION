@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from 'react'
 import io from 'socket.io-client';
 import './chat.css'
+import profile from './profile.jpg';
 
 let socket;
 
@@ -37,7 +38,7 @@ const Chat = () => {
          }
 
 
-    }, [])
+    }, [backEndUrl,window.location.search])
 
     useEffect(()=>{
     socket.on('message',msg=>{
@@ -47,7 +48,7 @@ const Chat = () => {
 
             var div = document.getElementById("chat_body");
             div.scrollTop = div.scrollHeight - div.clientWidth;
-        }, 100)
+        }, 10)
       })
 
       socket.on('activeUsers',users =>{
@@ -71,35 +72,41 @@ const Chat = () => {
 
     }
     return (
-    <div className="container mt-4">
+<div className="cul col-md-6 offset-md-2">
     <div className="row chat-window " id="chat_window_1">
-        <div className="col-xs-4 col-md-4">
+       
 
-            <p>Active Users</p>
-        	<ul>
-                {
-                    activeUser.map(each => (
-                    <li>{JSON.stringify(each.name)}</li>
-                    ))
-                }
-            </ul>
-        </div>
-
-        <div className="col-xs-8 col-md-8">
+        <div className="row">
             <div className="panel panel-default">
                 <div className="panel-heading top-bar">
-                    <div className="col-md-12 col-xs-8">
-                        <h3 className="panel-title"><span className="glyphicon glyphicon-comment"></span>{room}</h3>
+                    <div className="col-sm-1">
+                        <img className="image" src={profile} alt='why'/>
                     </div>
-                </div>
+                    
+                    <div className="col-sm-5">
+                        <h1 >{room}</h1>
+                    </div>
+                    <div className="col-sm-6">
+                        <h3>Online users</h3>
+                                <p>
+                                    {
+                                        activeUser.map(each => (
+                                        <p><span className="material-symbols-rounded">
+                                        fiber_manual_record
+                                        </span>{JSON.stringify(each.name)}</p>
+                                        ))
+                                    }
+                                </p>
+                            </div>
+                                </div>
                 <div className="panel-body msg_container_base" id="chat_body">
                     {
                         messages.map((msg,idx)=>(
                             msg.user==user?.toLowerCase()?<>
                             <div key={idx} className="row msg_container base_receive">
-                                <div  className="col-xs-10 col-md-10">
-                                    <div className="messages msg_receive">
-                                        <p>{msg.text}</p>
+                                <div  className="col-xs-6 col-md-6">
+                                    <div className="messages r msg_sent">
+                                        <p>{msg.text}<span class="material-symbols-outlined">done_all</span></p>
                                         <time>{msg.user}</time>
                                     </div>
                                 </div>
@@ -107,8 +114,8 @@ const Chat = () => {
                             </>:<>
                             
                             <div key={idx} className="row msg_container base_sent">
-                                <div  className="col-xs-10 col-md-10">
-                                    <div className="messages msg_sent">
+                                <div  className="col-xs-6 col-md-6">
+                                    <div className="messages s msg_receive">
                                         <p>{msg.text}</p>
                                         <time>{msg.user}</time>
                                     </div>
@@ -119,19 +126,20 @@ const Chat = () => {
                         ))
                     }
                 </div>
-        </div>
-        <div className="panel-footer">
+        
+        <div className=" panel-footer">
             <div className="input-group">
                 <input id="btn-input" type="text" 
                   value={msg}
-                  onKeyPress={(e)=> e.key==="Enter"? sendMessage(e) : null}
+                  onKeyPress={(e)=> e.key==="Enter"? sendMessage(e):null}
                   onChange={(e)=>setMsg(e.target.value)}
-                  className="form-control input-sm chat_input" placeholder="Write your message here..."/>
+                  className="form-control input-sm chat_input" placeholder="Message"/>
             </div>
         </div>
     		</div>
         </div>
     </div>
+    </div> 
       
     )
 }

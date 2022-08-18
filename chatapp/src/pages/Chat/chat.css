@@ -1,12 +1,21 @@
+.cul
+{
+    margin-top:5%;
+}
+
+
 .col-md-2, .col-md-10{
     padding:0;
 }
 .panel{
     margin-bottom: 0px;
+    background-color: black;
 }
 .chat-window{
 
     margin-left:10px;
+    
+
 }
 .chat-window > div > .panel{
     border-radius: 5px 5px 0 0;
@@ -20,46 +29,51 @@
   padding: 0 10px 10px;
   max-height:300px;
   overflow-x:hidden;
+  background-image: url("bgwp.png");
 }
 .top-bar {
   background: #666;
-  color: white;
+  color: rgb(41, 36, 36);
   padding: 10px;
   position: relative;
   overflow: hidden;
 }
 .msg_receive{
-    padding-left:0;
-    margin-left:0;
+    padding-right:0;
+    margin-right:0;
 }
 .msg_sent{
     padding-bottom:20px !important;
-    margin-right:0;
+    margin-left:0;
 }
-.messages {
+.s {
   background: white;
   padding: 10px;
   border-radius: 2px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   max-width:100%;
 }
+.r {
+    background: greenyellow;
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    max-width:100%;
+  }
 .messages > p {
     font-size: 13px;
     margin: 0 0 0.2rem 0;
   }
 .messages > time {
-    font-size: 11px;
-    color: #ccc;
+    font-size: 12px;
+    color: rgb(10, 114, 65);
 }
 .msg_container {
     padding: 10px;
     overflow: hidden;
     display: flex;
 }
-img {
-    display: block;
-    width: 100%;
-}
+
 .avatar {
     position: relative;
 }
@@ -75,7 +89,7 @@ img {
     border-bottom-color: rgba(0, 0, 0, 0);
 }
 
-.base_sent {
+.base_receive {
   justify-content: flex-end;
   align-items: flex-end;
 }
@@ -113,6 +127,7 @@ img {
 .msg_container_base::-webkit-scrollbar-thumb
 {
     background-color: #555;
+    
 }
 
 .btn-group.dropup{
@@ -120,3 +135,39 @@ img {
     left:0px;
     bottom:0;
 }
+.image
+{
+vertical-align: middle;
+max-width:50px;
+border-radius: 50%;
+
+    
+}
+
+.material-symbols-rounded {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 100,
+  'GRAD' 0,
+  'opsz' 24;
+  color:#00FF00;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48;
+  color: green;
+  float: right;
+  
+}
+
+
+
+
+
+
+
