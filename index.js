@@ -43,12 +43,10 @@ io.on('connection',(socket)=>{
     })
     socket.on('sendMsg',(message,callBack)=>{
         const user =getUsers(socket.id);
-        if(user){
-         io.to(user.room).emit('message',{user:user.name,text:message}); 
-        }
-        else{
-            callBack("User Not Found")
-        }
+        io.to(user.room).emit('message',{user:user.name,text:message}); 
+       
+       
+        callBack()
 
     }) 
     socket.on('disconnect',()=>{
