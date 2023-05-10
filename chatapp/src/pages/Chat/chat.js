@@ -6,7 +6,7 @@ import profile from './profile.jpg';
 let socket;
 
 const Chat = () => {
-    const backEndUrl = "https://chattingnoww.herokuapp.com/"
+    const backEndUrl = "https://my-chat-0mkq.onrender.com/"
     
 
     
