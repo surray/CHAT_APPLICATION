@@ -6,7 +6,7 @@ import profile from './profile.jpg';
 let socket;
 
 const Chat = () => {
-    const backEndUrl = "https://my-chat-0mkq.onrender.com/"
+    const backEndUrl = "https://chat-application-git-main-surray.vercel.app/"
     
 
     
