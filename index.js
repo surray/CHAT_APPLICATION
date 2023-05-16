@@ -8,12 +8,12 @@ const server=http.createServer(app);
 const port=process.env.PORT||8000;
 
 const socketio= require("socket.io");
-const cors = require('cors');
-app.use(cors());
-// const io=socketio(server,{
-//     cors: {
-//       origin: '*' }
-//   });
+// const cors = require('cors');
+// app.use(cors());
+const io=socketio(server,{
+    cors: {
+      origin: '*' }
+  });
 
 //We define a route handler / that gets called when we hit our website home.
 // app.get('/',(req,res)=>
